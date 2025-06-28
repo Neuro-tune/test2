@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neuro•Tune — Музыкальный Discord-бот</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles/custom.css" />
+
+  <!-- SEO + OG -->
+  <meta name="description" content="Neuro•Tune — музыкальный Discord-бот: стриминг 24/7, фильтры, эффекты и эмоции." />
+  <meta property="og:title" content="Neuro•Tune — Discord-бот с качественной музыкой 24/7" />
+  <meta property="og:description" content="Окунись в атмосферу звучания. Spotify, YouTube, фильтры, HD звук." />
+  <meta property="og:image" content="/og-preview.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourdomain.com" />
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .gradient-text {
+      background: linear-gradient(to right, #a855f7, #3b82f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+<body class="bg-black text-white">
+  <canvas id="bg-canvas" class="fixed top-0 left-0 w-full h-full -z-10"></canvas>
+
+  <!-- Hero -->
+  <header class="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-b from-black to-gray-900">
+    <h1 class="text-6xl font-extrabold gradient-text mb-4 animate-fade-in-down">Neuro•Tune</h1>
+    <p class="text-xl text-gray-300 mb-8 animate-fade-in-up">Музыка. Эффекты. Эмоции.</p>
+    <div class="space-x-4 animate-fade-in">
+      <a href="#" class="px-6 py-3 bg-purple-600 hover:bg-purple-500 text-white rounded-xl">➕ Добавить на сервер</a>
+      <a href="#features" class="px-6 py-3 border border-purple-500 text-purple-400 hover:bg-purple-600 hover:text-white rounded-xl">Узнать больше</a>
+    </div>
+  </header>
+
+  <!-- Stats -->
+  <section class="bg-gray-900 py-16 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6">Мы уже с вами</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-purple-400 text-2xl font-bold">
+        <div><span id="servers">0</span><br><span class="text-sm text-gray-400 font-normal">Серверов</span></div>
+        <div><span id="users">0</span><br><span class="text-sm text-gray-400 font-normal">Пользователей</span></div>
+        <div><span id="tracks">0</span><br><span class="text-sm text-gray-400 font-normal">Треков сыграно</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="bg-gray-900 py-16 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-4">Особенности</h2>
+      <p class="text-gray-400 mb-12">Все, что нужно для идеального саундтрека вашего сервера.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- 4 фичи с иконками -->
+        <div class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:scale-105 transition"><div class="text-purple-400 text-4xl mb-4">🎵</div><h3 class="text-2xl font-semibold mb-2">Интеграция со Spotify</h3><p class="text-gray-300">Подключение любимых треков и плейлистов.</p></div>
+        <div class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:scale-105 transition"><div class="text-purple-400 text-4xl mb-4">📡</div><h3 class="text-2xl font-semibold mb-2">YouTube + SoundCloud</h3><p class="text-gray-300">Стриминг без ограничений.</p></div>
+        <div class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:scale-105 transition"><div class="text-purple-400 text-4xl mb-4">🎚️</div><h3 class="text-2xl font-semibold mb-2">Аудиоэффекты</h3><p class="text-gray-300">Бас-буст, эхо и другие эффекты.</p></div>
+        <div class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:scale-105 transition"><div class="text-purple-400 text-4xl mb-4">🎧</div><h3 class="text-2xl font-semibold mb-2">Режимы настроения</h3><p class="text-gray-300">Chill, Focus, Party и другие.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Команды -->
+  <section class="bg-gray-900 py-16 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-8">Примеры команд</h2>
+      <div class="bg-gray-800 p-6 rounded-xl text-left overflow-x-auto text-sm text-green-300 font-mono animate-typing">
+        <p><span class="text-purple-400">/neuro</span> play https://youtube.com/watch?v=example</p>
+        <p><span class="text-purple-400">/neuro</span> filters bassboost 5</p>
+        <p><span class="text-purple-400">/neuro</span> mood chill</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black py-8 text-center text-gray-500 text-sm">
+    <p>© 2025 Neuro•Tune. Все права защищены.</p>
+    <div class="mt-4 space-x-6">
+      <a href="https://top.gg/bot/yourbotid" target="_blank" class="hover:underline">Top.gg</a>
+      <a href="#" class="hover:underline">Discord Bot List</a>
+      <a href="#" class="hover:underline">GitHub</a>
+    </div>
+  </footer>
+
+  <script src="/scripts/stats.js"></script>
+  <script>
+    const canvas = document.getElementById('bg-canvas');
+    const ctx = canvas.getContext('2d');
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < 100; i++) {
+        ctx.beginPath();
+        ctx.arc(Math.random() * canvas.width, Math.random() * canvas.height, 1.5, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(168, 85, 247, 0.4)';
+        ctx.fill();
+      }
+      requestAnimationFrame(animate);
+    }
+    animate();
+  </script>
+</body>
+</html>
